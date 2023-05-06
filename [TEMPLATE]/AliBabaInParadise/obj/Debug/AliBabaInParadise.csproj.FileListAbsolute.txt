@@ -1,0 +1,12 @@
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[SOLUTION]\AliBabaInParadise\bin\Debug\AliBabaInParadise.exe.config
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[SOLUTION]\AliBabaInParadise\bin\Debug\AliBabaInParadise.exe
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[SOLUTION]\AliBabaInParadise\bin\Debug\AliBabaInParadise.pdb
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[SOLUTION]\AliBabaInParadise\obj\Debug\AliBabaInParadise.csprojResolveAssemblyReference.cache
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[SOLUTION]\AliBabaInParadise\obj\Debug\AliBabaInParadise.exe
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[SOLUTION]\AliBabaInParadise\obj\Debug\AliBabaInParadise.pdb
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[TEMPLATE]\AliBabaInParadise\bin\Debug\AliBabaInParadise.exe.config
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[TEMPLATE]\AliBabaInParadise\obj\Debug\AliBabaInParadise.exe
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[TEMPLATE]\AliBabaInParadise\obj\Debug\AliBabaInParadise.pdb
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[TEMPLATE]\AliBabaInParadise\bin\Debug\AliBabaInParadise.exe
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[TEMPLATE]\AliBabaInParadise\bin\Debug\AliBabaInParadise.pdb
+E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[TEMPLATE]\AliBabaInParadise\obj\Debug\AliBabaInParadise.csprojResolveAssemblyReference.cache
