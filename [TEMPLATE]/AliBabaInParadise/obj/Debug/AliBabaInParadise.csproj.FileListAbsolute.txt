@@ -10,3 +10,10 @@ E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba 
 E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[TEMPLATE]\AliBabaInParadise\bin\Debug\AliBabaInParadise.exe
 E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[TEMPLATE]\AliBabaInParadise\bin\Debug\AliBabaInParadise.pdb
 E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\DP\[U5] Ali Baba in Paradise\[TEMPLATE]\AliBabaInParadise\obj\Debug\AliBabaInParadise.csprojResolveAssemblyReference.cache
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 4\[TEMPLATE]\AliBabaInParadise\bin\Debug\AliBabaInParadise.exe.config
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 4\[TEMPLATE]\AliBabaInParadise\bin\Debug\AliBabaInParadise.exe
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 4\[TEMPLATE]\AliBabaInParadise\bin\Debug\AliBabaInParadise.pdb
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 4\[TEMPLATE]\AliBabaInParadise\obj\Debug\AliBabaInParadise.csproj.AssemblyReference.cache
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 4\[TEMPLATE]\AliBabaInParadise\obj\Debug\AliBabaInParadise.csproj.CoreCompileInputs.cache
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 4\[TEMPLATE]\AliBabaInParadise\obj\Debug\AliBabaInParadise.exe
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 4\[TEMPLATE]\AliBabaInParadise\obj\Debug\AliBabaInParadise.pdb
