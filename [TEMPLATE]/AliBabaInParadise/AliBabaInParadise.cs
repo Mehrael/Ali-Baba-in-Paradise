@@ -27,8 +27,8 @@ namespace Problem
         /// <param name="weights">weight of each item</param>
         /// <param name="profits">profit of each item</param>
         /// <returns>Max total profit</returns>
-        
         private static int[,] ExtraStorage;
+
         public static int SolveValue(int camelsLoad, int itemsCount, int[] weights, int[] profits)
         {
             //REMOVE THIS LINE BEFORE START CODING
@@ -38,10 +38,9 @@ namespace Problem
                 for (int j = 1; j <= camelsLoad; j++)
                 {
                     ExtraStorage[i, j] = ExtraStorage[i - 1, j];
-
+                    
                     if (j >= weights[i - 1])
                         ExtraStorage[i, j] = Math.Max(ExtraStorage[i, j], ExtraStorage[i, j - weights[i - 1]] + profits[i - 1]);
-
                 }
 
             return ExtraStorage[itemsCount, camelsLoad];
@@ -58,16 +57,16 @@ namespace Problem
         public static Tuple<int, int>[] ConstructSolution(int camelsLoad, int itemsCount, int[] weights, int[] profits)
         {
             //REMOVE THIS LINE BEFORE START CODING
-            // throw new NotImplementedException();
+            // throw new NotImplementedException()
 
             List<Tuple<int, int>> solution = new List<Tuple<int, int>>();
-            
+
             int itemIndex = itemsCount, weightIndex = camelsLoad;
-            
+
             while (itemIndex > 0 && weightIndex > 0)
                 if (ExtraStorage[itemIndex, weightIndex] != ExtraStorage[itemIndex - 1, weightIndex])
                 {
-                    solution.Add(new Tuple<int, int>(itemIndex , weights[itemIndex - 1]));
+                    solution.Add(new Tuple<int, int>(itemIndex, 1));
                     weightIndex -= weights[itemIndex - 1];
                 }
                 else
