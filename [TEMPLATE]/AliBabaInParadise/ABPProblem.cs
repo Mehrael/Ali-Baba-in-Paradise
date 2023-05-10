@@ -155,7 +155,7 @@ namespace Problem
                                 }
                                 sw.Stop();
                                 Console.WriteLine("time = {0} ms", sw.ElapsedMilliseconds);
-                                Console.WriteLine("output = {0}", output);
+                                //Console.WriteLine("output = {0}", output);
                             }
                             catch (Exception e)
                             {
@@ -200,8 +200,8 @@ namespace Problem
                             Console.WriteLine("Wrong Answer in Case {0} [FUNCTION#{1}].", i, c + 1);
                             wrongCases[c]++;
                         }
-                        maxTime = Math.Max(maxTime, sw.ElapsedMilliseconds);
-                        avgTime += sw.ElapsedMilliseconds;
+                        //maxTime = Math.Max(maxTime, sw.ElapsedMilliseconds);
+                        //avgTime += sw.ElapsedMilliseconds;
                     }
                     else                    //WrongAnswer
                     {
@@ -229,10 +229,10 @@ namespace Problem
                 Console.WriteLine("# correct = {0}", correctCases[c]);
                 Console.WriteLine("# time limit = {0}", timeLimitCases[c]);
                 Console.WriteLine("# wrong = {0}", wrongCases[c]);
-                // Console.WriteLine("\nFINAL EVALUATION (%), AVG TIME, MAX TIME = {0} {1} {2}", Math.Round((float)correctCasesPart1 / totalCases * 100, 0), correctCasesPart1 == 0 ? -1 : Math.Round(avgTime / (float)correctCasesPart1, 2), correctCasesPart1 == 0 ? -1 : maxTime);
-                // Console.WriteLine("\nFINAL EVALUATION (%) = {0}", Math.Round((float)correctCases / totalCases * 100, 0));
-                // Console.WriteLine("AVERAGE EXECUTION TIME (ms) = {0}", Math.Round(avgTime / (float)correctCases, 2));
-                Console.WriteLine("MAX EXECUTION TIME (ms) = {0}", maxTime); 
+                //Console.WriteLine("\nFINAL EVALUATION (%), AVG TIME, MAX TIME = {0} {1} {2}", Math.Round((float)correctCasesPart1 / totalCases * 100, 0), correctCasesPart1 == 0 ? -1 : Math.Round(avgTime / (float)correctCasesPart1, 2), correctCasesPart1 == 0 ? -1 : maxTime);
+                //Console.WriteLine("\nFINAL EVALUATION (%) = {0}", Math.Round((float)correctCases / totalCases * 100, 0));
+                //Console.WriteLine("AVERAGE EXECUTION TIME (ms) = {0}", Math.Round(avgTime / (float)correctCases, 2));
+                //Console.WriteLine("MAX EXECUTION TIME (ms) = {0}", maxTime); 
             }
             Console.WriteLine("\nFINAL EVALUATION: FUNCTION#1 (%), FUNCTION#2 (%) = {0} {1}", Math.Round((float)correctCases[0] / totalCases * 100, 0), Math.Round((float)correctCases[1] / totalCases * 100, 0));
 
@@ -247,6 +247,7 @@ namespace Problem
         public override void GenerateTestCases(HardniessLevel level, int numOfCases, bool includeTimeInFile = false, float timeFactor = 1)
         {
             throw new NotImplementedException();
+
         }
 
         #endregion
@@ -300,8 +301,10 @@ namespace Problem
         {
             if (outputItems == null)
             {
-                if (outputVal == expectedVal)
+                if (outputVal == expectedVal && expectedVal == 0)
                     return true;
+                Console.WriteLine("WRONG: no selected items while expected one or more");
+
                 return false;
             }
             int H = outputItems.Length;
@@ -312,33 +315,60 @@ namespace Problem
                 Console.WriteLine("WRONG: output value {0} NOT EQUAL expected value {1}", outputVal, expectedVal);
                 return false;
             }
-            int weightSum = 0;
-            int profitSum = 0;
+            int weightSum_1BASED = 0;
+            int profitSum_1BASED = 0;
+            int weightSum_0BASED = 0;
+            int profitSum_0BASED = 0;
             for (int i = 0; i < H; i++)
             {
                 int idx = outputItems[i].Item1;
                 int numInstances = outputItems[i].Item2;
-                if (numInstances < 1 )
+                if (numInstances < 1)
                 {
                     Console.WriteLine("WRONG: # taken instances ({0}) from item {1} not a valid number", numInstances, idx);
                     return false;
                 }
-                weightSum += weights[idx-1] * numInstances;
-                profitSum += profits[idx-1] * numInstances;
+                //1-BASED Case
+                if (idx >= 1 && idx <= N)
+                {
+                    weightSum_1BASED += weights[idx - 1] * numInstances;
+                    profitSum_1BASED += profits[idx - 1] * numInstances;
+                }
+                //0-BASED Case
+                if (idx >= 0 && idx < N)
+                {
+                    weightSum_0BASED += weights[idx] * numInstances;
+                    profitSum_0BASED += profits[idx] * numInstances;
+                }
             }
 
-            if (weightSum > camelsLoad)
+            int basedCase = -1 ;
+            if (profitSum_1BASED == expectedVal)
+                basedCase = 1;
+            else if (profitSum_0BASED == expectedVal)
+                basedCase = 0;
+            else
             {
-                Console.WriteLine("WRONG: total weight of returned items ({0}) is GREATER THAN camels load ({1})", weightSum, camelsLoad);
+                Console.WriteLine("WRONG: values sum of returned items NOT EQUAL the expected optimal value ({0})", expectedVal);
                 return false;
             }
-            
 
-            if (profitSum != expectedVal)
+            if (basedCase == 1)
             {
-                Console.WriteLine("WRONG: values sum of returned items ({0}) NOT EQUAL the expected optimal value ({1})", profitSum, expectedVal);
-                return false;
+                if (weightSum_1BASED > camelsLoad)
+                {
+                    Console.WriteLine("WRONG: total weight of returned items ({0}) is GREATER THAN camels load ({1})", weightSum_1BASED, camelsLoad);
+                    return false;
+                }
             }
+            else if (basedCase == 0)
+            {
+                if (weightSum_0BASED > camelsLoad)
+                {
+                    Console.WriteLine("WRONG: total weight of returned items ({0}) is GREATER THAN camels load ({1})", weightSum_0BASED, camelsLoad);
+                    return false;
+                }
+            }            
                 
             return true;
         }
