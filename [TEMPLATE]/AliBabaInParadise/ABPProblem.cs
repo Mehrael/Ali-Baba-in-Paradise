@@ -167,7 +167,7 @@ namespace Problem
                             caseTimedOut = false;
                         });
 
-                        //StartTimer(timeOutInMillisec);
+                        StartTimer(timeOutInMillisec);
                         tstCaseThr.Start();
                         tstCaseThr.Join(timeOutInMillisec);
                     }
@@ -200,8 +200,8 @@ namespace Problem
                             Console.WriteLine("Wrong Answer in Case {0} [FUNCTION#{1}].", i, c + 1);
                             wrongCases[c]++;
                         }
-                        //maxTime = Math.Max(maxTime, sw.ElapsedMilliseconds);
-                        //avgTime += sw.ElapsedMilliseconds;
+                        maxTime = Math.Max(maxTime, sw.ElapsedMilliseconds);
+                        avgTime += sw.ElapsedMilliseconds;
                     }
                     else                    //WrongAnswer
                     {
@@ -229,10 +229,10 @@ namespace Problem
                 Console.WriteLine("# correct = {0}", correctCases[c]);
                 Console.WriteLine("# time limit = {0}", timeLimitCases[c]);
                 Console.WriteLine("# wrong = {0}", wrongCases[c]);
-                //Console.WriteLine("\nFINAL EVALUATION (%), AVG TIME, MAX TIME = {0} {1} {2}", Math.Round((float)correctCasesPart1 / totalCases * 100, 0), correctCasesPart1 == 0 ? -1 : Math.Round(avgTime / (float)correctCasesPart1, 2), correctCasesPart1 == 0 ? -1 : maxTime);
-                //Console.WriteLine("\nFINAL EVALUATION (%) = {0}", Math.Round((float)correctCases / totalCases * 100, 0));
-                //Console.WriteLine("AVERAGE EXECUTION TIME (ms) = {0}", Math.Round(avgTime / (float)correctCases, 2));
-                //Console.WriteLine("MAX EXECUTION TIME (ms) = {0}", maxTime); 
+                // Console.WriteLine("\nFINAL EVALUATION (%), AVG TIME, MAX TIME = {0} {1} {2}", Math.Round((float)correctCases[c] / totalCases * 100, 0), correctCases[c] == 0 ? -1 : Math.Round(avgTime / (float)correctCases[c], 2), correctCases[c] == 0 ? -1 : maxTime);
+                Console.WriteLine("\nFINAL EVALUATION (%) = {0}", Math.Round((float)correctCases[c] / totalCases * 100, 0));
+                Console.WriteLine("AVERAGE EXECUTION TIME (ms) = {0}", Math.Round(avgTime / (float)correctCases[c], 2));
+                Console.WriteLine("MAX EXECUTION TIME (ms) = {0}", maxTime); 
             }
             Console.WriteLine("\nFINAL EVALUATION: FUNCTION#1 (%), FUNCTION#2 (%) = {0} {1}", Math.Round((float)correctCases[0] / totalCases * 100, 0), Math.Round((float)correctCases[1] / totalCases * 100, 0));
 

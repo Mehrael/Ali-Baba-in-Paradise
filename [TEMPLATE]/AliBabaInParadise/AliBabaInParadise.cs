@@ -34,12 +34,19 @@ namespace Problem
             //REMOVE THIS LINE BEFORE START CODING
             // throw new NotImplementedException();
             ExtraStorage = new int[itemsCount + 1, camelsLoad + 1];
-            for (int i = 1; i <= itemsCount; i++)
-                for (int j = 1; j <= camelsLoad; j++)
+            
+            for (int i = 0; i <= itemsCount; i++)
+                for (int j = 0; j <= camelsLoad; j++)
                 {
+                    if (i == 0 || j == 0)
+                    {
+                        ExtraStorage[i, j] = 0;
+                        continue;
+                    }
+                    
                     ExtraStorage[i, j] = ExtraStorage[i - 1, j];
                     
-                    if (j >= weights[i - 1])
+                    if (weights[i - 1] <= j)
                         ExtraStorage[i, j] = Math.Max(ExtraStorage[i, j], ExtraStorage[i, j - weights[i - 1]] + profits[i - 1]);
                 }
 
@@ -61,16 +68,14 @@ namespace Problem
 
             List<Tuple<int, int>> solution = new List<Tuple<int, int>>();
 
-            int itemIndex = itemsCount, weightIndex = camelsLoad;
-
-            while (itemIndex > 0 && weightIndex > 0)
-                if (ExtraStorage[itemIndex, weightIndex] != ExtraStorage[itemIndex - 1, weightIndex])
+            while (itemsCount != 0 && camelsLoad != 0)
+                if (ExtraStorage[itemsCount, camelsLoad] != ExtraStorage[itemsCount - 1, camelsLoad])
                 {
-                    solution.Add(new Tuple<int, int>(itemIndex, 1));
-                    weightIndex -= weights[itemIndex - 1];
+                    solution.Add(new Tuple<int, int>(itemsCount, 1));
+                    camelsLoad -= weights[itemsCount - 1];
                 }
                 else
-                    itemIndex--;
+                    itemsCount--;
 
             return solution.ToArray();
         }
