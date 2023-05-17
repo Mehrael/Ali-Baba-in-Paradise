@@ -32,9 +32,9 @@ namespace Problem
         public static int SolveValue(int camelsLoad, int itemsCount, int[] weights, int[] profits)
         {
             //REMOVE THIS LINE BEFORE START CODING
-            // throw new NotImplementedException();
+            //throw new NotImplementedException();
             ExtraStorage = new int[itemsCount + 1, camelsLoad + 1];
-            
+
             for (int i = 0; i <= itemsCount; i++)
                 for (int j = 0; j <= camelsLoad; j++)
                 {
@@ -43,11 +43,12 @@ namespace Problem
                         ExtraStorage[i, j] = 0;
                         continue;
                     }
-                    
+
                     ExtraStorage[i, j] = ExtraStorage[i - 1, j];
-                    
+
                     if (weights[i - 1] <= j)
-                        ExtraStorage[i, j] = Math.Max(ExtraStorage[i, j], ExtraStorage[i, j - weights[i - 1]] + profits[i - 1]);
+                        ExtraStorage[i, j] = Math.Max(ExtraStorage[i, j],
+                            ExtraStorage[i, j - weights[i - 1]] + profits[i - 1]);
                 }
 
             return ExtraStorage[itemsCount, camelsLoad];
@@ -66,10 +67,10 @@ namespace Problem
             //REMOVE THIS LINE BEFORE START CODING
             // throw new NotImplementedException()
 
-            if (ExtraStorage == null)
+            if(ExtraStorage == null)
             {
                 ExtraStorage = new int[itemsCount + 1, camelsLoad + 1];
-            
+
                 for (int i = 0; i <= itemsCount; i++)
                     for (int j = 0; j <= camelsLoad; j++)
                     {
@@ -78,14 +79,16 @@ namespace Problem
                             ExtraStorage[i, j] = 0;
                             continue;
                         }
-                        
+
                         ExtraStorage[i, j] = ExtraStorage[i - 1, j];
-                        
+
                         if (weights[i - 1] <= j)
-                            ExtraStorage[i, j] = Math.Max(ExtraStorage[i, j], ExtraStorage[i, j - weights[i - 1]] + profits[i - 1]);
+                            ExtraStorage[i, j] = Math.Max(ExtraStorage[i, j],
+                                ExtraStorage[i, j - weights[i - 1]] + profits[i - 1]);
                     }
+
             }
-            
+
             List<Tuple<int, int>> solution = new List<Tuple<int, int>>();
 
             while (itemsCount != 0 && camelsLoad != 0)
@@ -97,6 +100,7 @@ namespace Problem
                 else
                     itemsCount--;
 
+            ExtraStorage = null;
             return solution.ToArray();
         }
 
